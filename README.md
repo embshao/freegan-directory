@@ -31,3 +31,4 @@ Development (Webpack dev server) mode:
 ```shell
 npm run start:dev
 ```
+# freegan-directory
