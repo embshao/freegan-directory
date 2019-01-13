@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import Feed from "../Feed/Feed";
-
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import Map from '../Map/Map';
 const App = ({ children }) => (
   <>
     <Header />
 
-    <main>{children}</main>
-    <Feed />
+    <main>
+      {children}
+    </main>
+    <Map />
     <Footer />
   </>
 );
