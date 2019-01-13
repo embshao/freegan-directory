@@ -28,7 +28,7 @@ class Dropdown extends Component {
   }
 
   handleSubmit(event) {
-    alert("Your favorite flavor is: " + this.state.value);
+    alert("Selected neighborhood " + this.state.value);
     event.preventDefault();
   }
 
