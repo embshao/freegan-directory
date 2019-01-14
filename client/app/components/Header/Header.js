@@ -9,13 +9,15 @@ const headerStyle = {
 };
 const navStyle = {
   display: "inline-block",
-  width: "90px"
+  width: "200px"
 };
-
+const textStyle = {
+  padding: "30px"
+};
 const Header = () => (
   <header style={headerStyle}>
-    <h1>Freegan Directory</h1>
-    <div>
+    <div style={textStyle}>
+      <h1 style={navStyle}>Freegan Directory</h1>
       <nav style={navStyle}>
         <Link to="/">Home</Link>
       </nav>
