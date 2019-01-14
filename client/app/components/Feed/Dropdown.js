@@ -1,4 +1,14 @@
 import React, { Component } from "react";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import InputLabel from "@material-ui/core/InputLabel";
+import OutlinedInput from "@material-ui/core/OutlinedInput";
+
+import MenuItem from "@material-ui/core/MenuItem";
+
+const selectStyle = {
+  minWidth: "150px"
+};
 
 class Dropdown extends Component {
   constructor(props) {
@@ -28,13 +38,14 @@ class Dropdown extends Component {
   }
 
   handleSubmit(event) {
-    alert("Selected neighborhood " + this.state.value);
+    alert("Selected neighborhood " + this.state.neighborhoodName);
+    alert("Today is " + this.state.isToday);
     event.preventDefault();
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div>
         <label>
           Is today:
           <input
@@ -45,17 +56,37 @@ class Dropdown extends Component {
           />
         </label>
         <br />
-        <label>
-          Neighborhood:
-          <select value={this.state.value} onChange={this.handleDropdownChange}>
-            <option value="midtown">Midtown</option>
-            <option value="chinatown">Chinatown</option>
-            <option value="east-village">East Village</option>
-            <option value="west-village">West Village</option>
-          </select>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+        <FormControl variant="outlined" onSubmit={this.handleSubmit}>
+          <InputLabel
+            ref={ref => {
+              this.InputLabelRef = ref;
+            }}
+            htmlFor="outlined-age-simple"
+          >
+            Neighborhood
+          </InputLabel>
+          <Select
+            value={this.state.value}
+            onChange={(this.handleDropdownChange, this.handleSubmit)}
+            input={
+              <OutlinedInput
+                labelWidth={this.state.labelWidth}
+                name="age"
+                id="outlined-age-simple"
+              />
+            }
+            style={selectStyle}
+          >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={"chinatown"}>ChinaTown</MenuItem>
+            <MenuItem value={"west-village"}>West Village</MenuItem>
+            <MenuItem value={"east-village"}>East Village</MenuItem>
+            <MenuItem value={"midtown"}>Midtown</MenuItem>
+          </Select>
+        </FormControl>
+      </div>
     );
   }
 }
