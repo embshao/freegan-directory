@@ -15,7 +15,7 @@ class Dropdown extends Component {
     super(props);
     this.state = {
       isToday: true,
-      neighborhoodName: "Midtown"
+      value: ""
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -25,6 +25,8 @@ class Dropdown extends Component {
 
   handleDropdownChange(event) {
     this.setState({ value: event.target.value });
+    alert("Selected neighborhood " + this.state.value);
+    event.preventDefault();
   }
 
   handleInputChange(event) {
@@ -38,7 +40,7 @@ class Dropdown extends Component {
   }
 
   handleSubmit(event) {
-    alert("Selected neighborhood " + this.state.neighborhoodName);
+    alert("Selected neighborhood " + this.state.value);
     alert("Today is " + this.state.isToday);
     event.preventDefault();
   }
@@ -56,7 +58,7 @@ class Dropdown extends Component {
           />
         </label>
         <br />
-        <FormControl variant="outlined" onSubmit={this.handleSubmit}>
+        <FormControl variant="outlined">
           <InputLabel
             ref={ref => {
               this.InputLabelRef = ref;
@@ -67,7 +69,7 @@ class Dropdown extends Component {
           </InputLabel>
           <Select
             value={this.state.value}
-            onChange={(this.handleDropdownChange, this.handleSubmit)}
+            onChange={this.handleDropdownChange}
             input={
               <OutlinedInput
                 labelWidth={this.state.labelWidth}
@@ -81,9 +83,9 @@ class Dropdown extends Component {
               <em>None</em>
             </MenuItem>
             <MenuItem value={"chinatown"}>ChinaTown</MenuItem>
-            <MenuItem value={"west-village"}>West Village</MenuItem>
-            <MenuItem value={"east-village"}>East Village</MenuItem>
-            <MenuItem value={"midtown"}>Midtown</MenuItem>
+            <MenuItem value={"West-village"}>West Village</MenuItem>
+            <MenuItem value={"East-village"}>East Village</MenuItem>
+            <MenuItem value={"Midtown"}>Midtown</MenuItem>
           </Select>
         </FormControl>
       </div>

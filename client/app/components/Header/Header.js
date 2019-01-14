@@ -27,6 +27,9 @@ const Header = () => (
       <nav style={navStyle}>
         <Link to="/directory">Directory</Link>
       </nav>
+      <nav style={navStyle}>
+        <Link to="/testFeed">TestFeed</Link>
+      </nav>
     </div>
     <hr />
   </header>

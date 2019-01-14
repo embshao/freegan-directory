@@ -8,6 +8,28 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 
 class Feed extends Component {
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
+    let url = "/freegan";
+    let http = new XMLHttpRequest();
+    http.open("GET", url, true);
+    http.send();
+    http.onload = function() {
+      if (http.readyState === 4) {
+        if (http.status === 200) {
+          console.log("wassup connected");
+          let res = JSON.parse(http.response);
+          console.log(res);
+          for (let row of res) {
+            console.log(row.created_at);
+          }
+        }
+      }
+    };
+  }
+
   render() {
     return (
       <div className="feed-body">
