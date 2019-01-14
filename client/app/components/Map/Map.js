@@ -28,6 +28,8 @@ class Map extends React.Component {
           ).addTo(mymap);
               
           setTimeout(function () {  mymap.invalidateSize() }, 100);
+
+          var marker = L.marker([40.7831, -73.9712]).addTo(mymap);
         //   this.route = L.Routing.control({
         //     position: "topleft",
         //     routeWhileDragging: true,
@@ -49,7 +51,6 @@ class Map extends React.Component {
           <div>
             <h1> Site Directory Map</h1>
             <div id="map"></div>
-            <h1>test</h1>
           </div>
         );
       }
