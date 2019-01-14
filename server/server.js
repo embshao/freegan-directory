@@ -18,7 +18,14 @@ const port  = process.env.PORT || 8080;
 // ================================================================================================
 
 // Set up Mongoose
-mongoose.connect(isDev ? config.db_dev : config.db);
+mongoose.connect(isDev ? config.db_dev : config.db, function(err, db) {
+  config.collection_name = db.collection('freegan');
+});
+
+mongoose.connection.on('error', function() {
+  console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
+  process.exit(1);
+});
 mongoose.Promise = global.Promise;
 
 const app = express();
