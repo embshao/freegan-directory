@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Header = () => (
   <header>
@@ -8,6 +8,9 @@ const Header = () => (
 
     <nav>
       <Link to="/helloworld">Hello World</Link>
+    </nav>
+    <nav>
+      <Link to="/directory">Directory</Link>
     </nav>
 
     <hr />

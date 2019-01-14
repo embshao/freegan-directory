@@ -9,6 +9,7 @@ import NotFound from "./components/App/NotFound";
 import Home from "./components/Home/Home";
 
 import HelloWorld from "./components/HelloWorld/HelloWorld";
+import Directory from "./components/Directory/Directory";
 
 import "./styles/styles.scss";
 
@@ -18,6 +19,7 @@ render(
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/helloworld" component={HelloWorld} />
+        <Route path="/directory" component={Directory} />
         <Route component={NotFound} />
       </Switch>
     </App>
