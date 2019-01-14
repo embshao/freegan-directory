@@ -2,6 +2,11 @@
 
 @import 'vendor/normalize';
 
+container {
+    display: 'flex';
+    flexWrap: 'wrap';
+  }
+
 .testHeader{
     font-size: 80px;
     color: red;
