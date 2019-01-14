@@ -15,7 +15,7 @@ class Dropdown extends Component {
     super(props);
     this.state = {
       isToday: true,
-      value: "Midtown" //Default is Midtown
+      value: ""
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
