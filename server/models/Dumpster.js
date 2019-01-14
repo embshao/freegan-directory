@@ -1,32 +1,37 @@
 const mongoose = require('mongoose');
 
 const DumpsterSchema = new mongoose.Schema({
-    id : {
-        type: Number
-    },
     lat : {
-        type: Number
+        type: Number,
+        default: 0
     },
     lng : {
         type: Number,
+        default: 0
     },
     unverified: {
-        type: String
+        type: String,
+        default: ''
     },
     description: {
-        type: String
+        type: String,
+        default: ''
     },
     author: {
-        type: String
+        type: String,
+        default: ''
     },
     address: {
-        type: String
+        type: String,
+        default: ''
     },
     created_at: {
-        type: String
+        type: String,
+        default: ''
     },
     updated_at: {
-        type: String
+        type: String,
+        default: ''
     }
 });
 
