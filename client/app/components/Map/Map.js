@@ -8,19 +8,11 @@ class Map extends React.Component {
       
     }
     componentDidMount() {
-        var mymap = L.map("mapid", {
+        var mymap = L.map("map", {
             touchZoom: true,
             bounceAtZoomLimits: false,
           }).setView([40.7831, -73.9712], 12);
-
-        //   var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-
-        //   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-        //         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        //         maxZoom: 18,
-        //         id: 'mapbox.streets',
-        //         accessToken: 'pk.eyJ1IjoibWFpbGF3IiwiYSI6ImNqcXF2Mjc1bzBnaGgzd3BlYTliNTdrNGgifQ.Bh1wfyYCaRPzYYrOQoBgvw'
-        //     }).addTo(mymap);
+        mymap.invalidateSize();
           L.tileLayer(
             "https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/{z}/{x}/{y}?access_token={accessToken}",
             {
@@ -34,8 +26,8 @@ class Map extends React.Component {
                 '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             }
           ).addTo(mymap);
-          
-          
+              
+          setTimeout(function () {  mymap.invalidateSize() }, 100);
         //   this.route = L.Routing.control({
         //     position: "topleft",
         //     routeWhileDragging: true,
@@ -53,9 +45,10 @@ class Map extends React.Component {
     }
     render() {
         return (
+            
           <div>
             <h1> Site Directory Map</h1>
-            <div id="mapid"></div>
+            <div id="map"></div>
             <h1>test</h1>
           </div>
         );
