@@ -3,7 +3,6 @@ const config = require('../../../config/config');
 module.exports = (app) => {
 
   app.get('/freegan', (req, res, next) => {
-    console.log(config.collection_name);
     
     config.collection_name.find({}).toArray(function (err, result) {
       if (err) throw err;
