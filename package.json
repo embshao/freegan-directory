@@ -38,6 +38,7 @@
     "leaflet-routing-machine": "^3.2.12",
     "leaflet.locatecontrol": "^0.66.0",
     "material-ui": "^0.20.2",
+    "mongodb": "^3.1.10",
     "mongoose": "^5.0.11",
     "node-sass": "^4.7.2",
     "nodemon": "^1.17.2",
