@@ -41,7 +41,9 @@ class Map extends React.Component {
             
               for (let row of res) {
 
-                  L.marker([row.lat, row.lng]).addTo(mymap);
+                  L.marker([row.lat, row.lng])
+                  .bindPopup(row.address)
+                  .addTo(mymap);
                   }
             }
           }
