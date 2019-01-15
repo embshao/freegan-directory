@@ -5,11 +5,9 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 import App from "./components/App/App";
 import NotFound from "./components/App/NotFound";
-
 import Home from "./components/Home/Home";
 
 import HelloWorld from "./components/HelloWorld/HelloWorld";
-import Directory from "./components/Directory/Directory";
 import Feed from "./components/Feed/Feed";
 
 import "./styles/styles.scss";
@@ -20,7 +18,6 @@ render(
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/helloworld" component={HelloWorld} />
-        <Route path="/directory" component={Directory} />
         <Route path="/testFeed" component={Feed} />
         <Route component={NotFound} />
       </Switch>

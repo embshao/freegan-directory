@@ -35,6 +35,7 @@
     "html-webpack-plugin": "^3.1.0",
     "leaflet": "^1.4.0",
     "leaflet-control-geocoder": "^1.6.0",
+    "leaflet-geosearch": "^2.7.0",
     "leaflet-routing-machine": "^3.2.12",
     "leaflet.locatecontrol": "^0.66.0",
     "material-ui": "^0.20.2",

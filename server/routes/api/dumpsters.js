@@ -13,6 +13,11 @@ module.exports = (app) => {
   });
 
   app.post('/dumpsters', function(req, res) {
+    console.log("HERE");
+    console.log(res);
+    console.log(req.body);
+    console.log(req.body.lat);
+    console.log(req.body.lng);
     var dump = new Dumpster({
       lat : req.body.lat,
       lng : req.body.lng,
