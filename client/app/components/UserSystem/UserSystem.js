@@ -1,12 +1,31 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
 
-import {
-  setInStorage,
-  getFromStorage,
-} from '../../utils/storage';
+import { setInStorage, getFromStorage } from '../../utils/storage';
 
-class Home extends Component {
+const userBox = {
+  width: "400px",
+  backgroundColor: "ivory",
+  marginLeft: "auto",
+  marginRight: "auto",
+};
+
+const userInnerBox = {
+  textAlign: "center",
+  padding: "10px",
+};
+
+const tab = {
+  textDecoration: "none",
+  padding: "5px",
+  background: "pink",
+  color: "white",
+  fontSize: "15px",
+  textAlign: "center",
+};
+
+
+class UserSystem extends Component {
   constructor(props) {
     super(props);
 
@@ -198,58 +217,41 @@ class Home extends Component {
       signUpPassword,
       signUpError,
     } = this.state;
+
     if (isLoading) {
       return (<div><p>Loading...</p></div>);
     }
+
     if (!token) {
       return (
-        <div>
-          <div>
-            {
-              (signInError) ? (
-                <p>{signInError}</p>
-              ) : (null)
-            }
-            <p>Sign In</p>
-            <input
-              type="email"
-              placeholder="Email"
-              value={signInEmail}
-              onChange={this.onTextboxChangeSignInEmail}
-            />
-            <br />
-            <input
-              type="password"
-              placeholder="Password"
-              value={signInPassword}
-              onChange={this.onTextboxChangeSignInPassword}
-            />
-            <br />
-            <button onClick={this.onSignIn}>Sign In</button>
+        <div style={userBox}>
+          <p style={tab}>Login</p>
+          <br/>
+          
+          <div style={userInnerBox}>
+            {(signInError) ? (<p>{signInError}</p>) : (null)}
+            <p>
+              <input type="email" placeholder="Email" value={signInEmail} onChange={this.onTextboxChangeSignInEmail}/>
+            </p>
+            <p>
+              <input type="password" placeholder="Password" value={signInPassword} onChange={this.onTextboxChangeSignInPassword}/>
+            </p>
+            <button onClick={this.onSignIn}>Login</button>
           </div>
-          <br />
-          <br />
-          <div>
-            {
-              (signUpError) ? (
-                <p>{signUpError}</p>
-              ) : (null)
-            }
-            <p>Sign Up</p>
-            <input
-              type="email"
-              placeholder="Email"
-              value={signUpEmail}
-              onChange={this.onTextboxChangeSignUpEmail}
-            /><br />
-            <input
-              type="password"
-              placeholder="Password"
-              value={signUpPassword}
-              onChange={this.onTextboxChangeSignUpPassword}
-            /><br />
+
+            <p style={tab}>Sign Up</p>
+
+          <div style={userInnerBox}>
+            {(signUpError) ? (<p>{signUpError}</p>) : (null)}
+            <p>
+              <input type="email" placeholder="Email" value={signUpEmail} onChange={this.onTextboxChangeSignUpEmail}/>
+            </p>
+            <p>
+              <input type="password" placeholder="Password" value={signUpPassword} onChange={this.onTextboxChangeSignUpPassword}/>
+            </p>
             <button onClick={this.onSignUp}>Sign Up</button>
           </div>
+
        </div>
       );
     }
@@ -260,7 +262,6 @@ class Home extends Component {
       </div>
     );
   }
-
 }
 
-export default Home;
+export default UserSystem;

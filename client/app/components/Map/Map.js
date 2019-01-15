@@ -38,7 +38,7 @@ class Map extends React.Component {
             if (http.status === 200) {
               
               let res = JSON.parse(http.response);
-            
+              console.log(res);
               for (let row of res) {
 
                   L.marker([row.lat, row.lng])
