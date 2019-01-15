@@ -6,7 +6,7 @@ import {
   getFromStorage,
 } from '../../utils/storage';
 
-class Home extends Component {
+class UserSystem extends Component {
   constructor(props) {
     super(props);
 
@@ -263,4 +263,4 @@ class Home extends Component {
 
 }
 
-export default Home;
+export default UserSystem;
