@@ -19,10 +19,10 @@ const Header = () => (
     <div style={textStyle}>
       <h1 style={navStyle}>Freegan Directory</h1>
       <nav style={navStyle}>
-        <Link to="/">Home</Link>
+        <Link to="/">Sign In/Sign Up</Link>
       </nav>
       <nav style={navStyle}>
-        <Link to="/helloworld">Hello World</Link>
+        <Link to="/about">About</Link>
       </nav>
       <nav style={navStyle}>
         <Link to="/directory">Directory</Link>
