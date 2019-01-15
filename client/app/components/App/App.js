@@ -8,7 +8,7 @@ import Map from "../Map/Map";
 
 const App = ({ children }) => (
   <>
-    <Header />
+    <Header/>
     <main>{children}</main>
     <Map />
     <Footer />
