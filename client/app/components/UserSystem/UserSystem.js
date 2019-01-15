@@ -4,7 +4,7 @@ import 'whatwg-fetch';
 import { setInStorage, getFromStorage } from '../../utils/storage';
 
 const userBox = {
-  width: "500px",
+  width: "400px",
   backgroundColor: "ivory",
   marginLeft: "auto",
   marginRight: "auto",
@@ -16,22 +16,12 @@ const userInnerBox = {
 };
 
 const tab = {
-  listStyle: "none",
-  marginLeft: "auto",
-  marginRight: "auto",
-};
-
-const tabLi = {
-  display: "block",
   textDecoration: "none",
   padding: "5px",
   background: "pink",
   color: "white",
   fontSize: "15px",
-  float: "left",
-  width: "40%",
   textAlign: "center",
-  marginLeft: "3px"
 };
 
 
@@ -235,10 +225,7 @@ class UserSystem extends Component {
     if (!token) {
       return (
         <div style={userBox}>
-          <ul style={tab}>
-            <li style={tabLi}>Login</li>
-            <li style={tabLi}>Sign Up</li>
-          </ul>
+          <p style={tab}>Login</p>
           <br/>
           
           <div style={userInnerBox}>
@@ -251,6 +238,8 @@ class UserSystem extends Component {
             </p>
             <button onClick={this.onSignIn}>Login</button>
           </div>
+
+            <p style={tab}>Sign Up</p>
 
           <div style={userInnerBox}>
             {(signUpError) ? (<p>{signUpError}</p>) : (null)}
