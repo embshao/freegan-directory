@@ -70,13 +70,7 @@ class Dropdown extends Component {
           <Select
             value={this.state.value}
             onChange={this.handleDropdownChange}
-            input={
-              <OutlinedInput
-                labelWidth={this.state.labelWidth}
-                name="age"
-                id="outlined-age-simple"
-              />
-            }
+            input={<OutlinedInput name="age" id="outlined-age-simple" />}
             style={selectStyle}
           >
             <MenuItem value="">
