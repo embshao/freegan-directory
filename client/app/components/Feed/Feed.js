@@ -6,6 +6,13 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import { SocialSentimentSatisfied } from "material-ui/svg-icons";
 
+const listStyle = {
+  paddingTop: "30px",
+  width: "50%"
+};
+const feedStyle = {
+  marginLeft: "80px"
+};
 const testList = [
   {
     address: "NA",
@@ -243,10 +250,10 @@ class Feed extends Component {
 
   render() {
     return (
-      <div className="feed-body">
-        <h1> Visit Feed</h1>
+      <div style={feedStyle}>
+        <h1> Live Feed</h1>
         <Dropdown />
-        <List>
+        <List style={listStyle}>
           {testList.map(test => (
             <div>
               <ListItem button>

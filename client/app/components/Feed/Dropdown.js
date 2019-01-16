@@ -40,15 +40,15 @@ class Dropdown extends Component {
   }
 
   handleSubmit(event) {
-    alert("Selected neighborhood " + this.state.value);
-    alert("Today is " + this.state.isToday);
+    //alert("Selected neighborhood " + this.state.value);
+    //alert("Today is " + this.state.isToday);
     event.preventDefault();
   }
 
   render() {
     return (
       <div>
-        <label>
+        {/*<label>
           Is today:
           <input
             name="isToday"
@@ -56,7 +56,7 @@ class Dropdown extends Component {
             checked={this.state.isToday}
             onChange={this.handleInputChange}
           />
-        </label>
+        </label>*/}
         <br />
         <FormControl variant="outlined">
           <InputLabel
