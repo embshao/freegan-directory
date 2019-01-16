@@ -113,8 +113,6 @@ class Site extends React.Component {
           <TextField
           id="outlined-name"
           label="Description"
-          multiline
-          rows="4"
           style={textField}
           value={description}
           onChange={this.onTextboxChangeDescription}
@@ -122,7 +120,7 @@ class Site extends React.Component {
           variant="outlined"
           />
 
-
+        <br />
           <Button  onClick={this.handleSubmit}>Submit!</Button>
         </form>
         </div>
