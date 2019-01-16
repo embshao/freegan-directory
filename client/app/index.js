@@ -15,6 +15,7 @@ render(
   <Router>
     <App>
       <Switch>
+        <Route exact path="/" component={UserSystem}></Route>
         <Route path="/testFeed" component={Feed} />
         <Route component={NotFound} />
       </Switch>
