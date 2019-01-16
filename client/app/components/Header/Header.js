@@ -19,8 +19,12 @@ const textStyle = {
 const Header = () => (
   <header style={headerStyle}>
     <div style={textStyle}>
+<<<<<<< HEAD
+    <img src="/assets/img/logo.png"></img>
+=======
       <img src="/assets/img/logo.png" />
 
+>>>>>>> 266f5bd2ef10c209d38a06deb4d4163469029e8d
       <h1 style={navStyle}>forage</h1>
       <nav style={navStyle}>
         <Button>
@@ -38,7 +42,6 @@ const Header = () => (
         </Button>
       </nav>
     </div>
-    <hr />
   </header>
 );
 

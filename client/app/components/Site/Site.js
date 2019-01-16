@@ -16,9 +16,21 @@ const container = {
   flexWrap: "wrap"
 };
 const textField = {
+<<<<<<< HEAD
+    marginLeft: '10px',
+    marginRight: '10px'
+}
+const image = {
+    height: '40px',
+    display:'inline-block',
+    float: 'left'
+}
+
+=======
   marginLeft: "10px",
   marginRight: "10px"
 };
+>>>>>>> 266f5bd2ef10c209d38a06deb4d4163469029e8d
 
 class Site extends React.Component {
   constructor() {
@@ -78,10 +90,18 @@ class Site extends React.Component {
   render() {
     const { address, description } = this.state;
 
+<<<<<<< HEAD
+      return (
+          <div>
+        <img style={image}src="/assets/img/trash.png"></img>
+        <Typography component="h5" variant="h4" gutterBottom>
+        Add a new spot here!
+=======
     return (
       <div>
         <Typography component="h6" variant="h6" gutterBottom>
           Add a new find here!
+>>>>>>> 266f5bd2ef10c209d38a06deb4d4163469029e8d
         </Typography>
 
         <form>
