@@ -287,6 +287,16 @@ class UserSystem extends Component {
             <p>
             <TextField
               id="outlined-name"
+              label="Display Name"
+              value={signUpUsername}
+              onChange={this.onTextboxChangeSignUpUsername}
+              margin="normal"
+              variant="outlined"
+              />
+            </p>
+            <p>
+            <TextField
+              id="outlined-name"
               label="Password"
               value={signUpPassword}
               onChange={this.onTextboxChangeSignUpPassword}
