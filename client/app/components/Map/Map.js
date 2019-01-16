@@ -2,7 +2,17 @@ import React from "react";
 import L from "leaflet";
 import BeautifyIcon from "./BeautifyIcon";
 import Site from "../Site/Site";
+import Typography from '@material-ui/core/Typography';
+const mapstyle = {
+    display:'inline-block',
+}
 
+
+const sitestyle = {
+  display:'inline-block',
+    float: 'right',
+    marginRight: '10%'
+}
 class Map extends React.Component {
     constructor(props) {
       super(props);
@@ -66,8 +76,8 @@ class Map extends React.Component {
         return (
             
           <div>
-            <div id="map"></div>
-            <Site></Site>
+            <div id="map" style={mapstyle}></div>
+            <div style={sitestyle}><Site></Site></div>
           </div>
 
         );
