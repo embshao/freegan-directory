@@ -9,7 +9,7 @@ const provider = new OpenStreetMapProvider();
 import 'whatwg-fetch';
 import axios from 'axios';
 import { withStyles } from '@material-ui/core/styles';
-
+import Typography from '@material-ui/core/Typography';
 
 const container = {
     display: 'flex',
@@ -18,7 +18,6 @@ const container = {
 const textField = {
     marginLeft: '10px',
     marginRight: '10px'
-    
 }
 
 
@@ -97,8 +96,11 @@ class Site extends React.Component {
 
       return (
           <div>
-        <h1> Add a new site! </h1>
-        <form style={container}>
+        <Typography component="h5" variant="h5" gutterBottom>
+        Add a new find here!
+        </Typography>
+        <br/>
+        <form >
           <TextField
           id="outlined-name"
           label="Address"
@@ -113,8 +115,6 @@ class Site extends React.Component {
           <TextField
           id="outlined-name"
           label="Description"
-          multiline
-          rows="4"
           style={textField}
           value={description}
           onChange={this.onTextboxChangeDescription}
@@ -122,7 +122,7 @@ class Site extends React.Component {
           variant="outlined"
           />
 
-
+        <br />
           <Button  onClick={this.handleSubmit}>Submit!</Button>
         </form>
         </div>

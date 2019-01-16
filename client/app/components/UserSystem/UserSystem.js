@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import 'whatwg-fetch';
 import Button from '@material-ui/core/Button';
 import { TextField } from "@material-ui/core";
-
 import { setInStorage, getFromStorage } from '../../utils/storage';
+import Typography from '@material-ui/core/Typography';
 
 const userBox = {
   width: "400px",
@@ -22,7 +22,6 @@ const tab = {
   padding: "5px",
   background: "#449B2E",
   color: "white",
-  fontSize: "15px",
   textAlign: "center",
 };
 
@@ -239,7 +238,10 @@ class UserSystem extends Component {
     if (!token) {
       return (
         <div style={userBox}>
-          <p style={tab}>Login</p>
+        <Typography component="h2" variant="h6" gutterBottom style={tab}>
+            Login
+          </Typography>
+          
           <div style={userInnerBox}>
             {(signInError) ? (<p>{signInError}</p>) : (null)}
             <p>
@@ -253,7 +255,6 @@ class UserSystem extends Component {
               />
 
 
-              {/* <input type="email" placeholder="Email" value={signInEmail} onChange={this.onTextboxChangeSignInEmail}/> */}
             </p>
             <p>
             <TextField
@@ -264,12 +265,13 @@ class UserSystem extends Component {
               margin="normal"
               variant="outlined"
               />
-              {/* <input type="password" placeholder="Password" value={signInPassword} onChange={this.onTextboxChangeSignInPassword}/> */}
             </p>
             <Button onClick={this.onSignIn}>Login</Button>
           </div>
 
-          <p style={tab}>Sign Up</p>
+          <Typography component="h2" variant="h6" gutterBottom style={tab}>
+            Sign Up
+          </Typography>
           <div style={userInnerBox}>
             {(signUpError) ? (<p>{signUpError}</p>) : (null)}
             <p>
@@ -281,7 +283,6 @@ class UserSystem extends Component {
               margin="normal"
               variant="outlined"
               />
-              {/* <input type="email" placeholder="Email" value={signUpEmail} onChange={this.onTextboxChangeSignUpEmail}/> */}
             </p>
             <p>
             <TextField
@@ -292,7 +293,6 @@ class UserSystem extends Component {
               margin="normal"
               variant="outlined"
               />
-              <input type="text" placeholder="Display Name" value={signUpUsername} onChange={this.onTextboxChangeSignUpUsername} />
             </p>
             
             <Button onClick={this.onSignUp}>Sign Up</Button>

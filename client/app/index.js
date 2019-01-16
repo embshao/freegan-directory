@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import App from "./components/App/App";
 import NotFound from "./components/App/NotFound";
 import UserSystem from "./components/UserSystem/UserSystem";
-
+import Map from "./components/Map/Map";
 import Feed from "./components/Feed/Feed";
 
 import "./styles/styles.scss";
@@ -16,8 +16,8 @@ render(
     <App>
       <Switch>
         <Route exact path="/" component={UserSystem}></Route>
-        <Route path="/testFeed" component={Feed} />
-        <Route component={NotFound} />
+        <Route path="/directory" component={Map}/>
+        <Route path="/testFeed" component={Feed}/>
       </Switch>
     </App>
   </Router>,
