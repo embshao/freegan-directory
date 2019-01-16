@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
+import Button from '@material-ui/core/Button';
+import { TextField } from "@material-ui/core";
 
 import { setInStorage, getFromStorage } from '../../utils/storage';
 
 const userBox = {
   width: "400px",
-  backgroundColor: "ivory",
+  backgroundColor: "white",
   marginLeft: "auto",
   marginRight: "auto",
 };
@@ -18,7 +20,7 @@ const userInnerBox = {
 const tab = {
   textDecoration: "none",
   padding: "5px",
-  background: "pink",
+  background: "#449B2E",
   color: "white",
   fontSize: "15px",
   textAlign: "center",
@@ -241,27 +243,59 @@ class UserSystem extends Component {
           <div style={userInnerBox}>
             {(signInError) ? (<p>{signInError}</p>) : (null)}
             <p>
-              <input type="email" placeholder="Email" value={signInEmail} onChange={this.onTextboxChangeSignInEmail}/>
+            <TextField
+              id="outlined-name"
+              label="Email"
+              value={signInEmail}
+              onChange={this.onTextboxChangeSignInEmail}
+              margin="normal"
+              variant="outlined"
+              />
+
+
+              {/* <input type="email" placeholder="Email" value={signInEmail} onChange={this.onTextboxChangeSignInEmail}/> */}
             </p>
             <p>
-              <input type="password" placeholder="Password" value={signInPassword} onChange={this.onTextboxChangeSignInPassword}/>
+            <TextField
+              id="outlined-name"
+              label="password"
+              value={signInPassword}
+              onChange={this.onTextboxChangeSignInPassword}
+              margin="normal"
+              variant="outlined"
+              />
+              {/* <input type="password" placeholder="Password" value={signInPassword} onChange={this.onTextboxChangeSignInPassword}/> */}
             </p>
-            <button onClick={this.onSignIn}>Login</button>
+            <Button onClick={this.onSignIn}>Login</Button>
           </div>
 
           <p style={tab}>Sign Up</p>
           <div style={userInnerBox}>
             {(signUpError) ? (<p>{signUpError}</p>) : (null)}
             <p>
-              <input type="email" placeholder="Email" value={signUpEmail} onChange={this.onTextboxChangeSignUpEmail}/>
+            <TextField
+              id="outlined-name"
+              label="Email"
+              value={signUpEmail}
+              onChange={this.onTextboxChangeSignUpEmail}
+              margin="normal"
+              variant="outlined"
+              />
+              {/* <input type="email" placeholder="Email" value={signUpEmail} onChange={this.onTextboxChangeSignUpEmail}/> */}
             </p>
             <p>
+            <TextField
+              id="outlined-name"
+              label="Password"
+              value={signUpPassword}
+              onChange={this.onTextboxChangeSignUpPassword}
+              margin="normal"
+              variant="outlined"
+              />
               <input type="text" placeholder="Display Name" value={signUpUsername} onChange={this.onTextboxChangeSignUpUsername} />
             </p>
-            <p>
-              <input type="password" placeholder="Password" value={signUpPassword} onChange={this.onTextboxChangeSignUpPassword}/>
-            </p>
-            <button onClick={this.onSignUp}>Sign Up</button>
+            
+            <Button onClick={this.onSignUp}>Sign Up</Button>
           </div>
 
        </div>
