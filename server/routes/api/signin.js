@@ -6,17 +6,20 @@ module.exports = (app) => {
   // start of signup endpoint
   app.post('/api/account/signup', (req, res, next) => {
     const { body } = req;
-    const {
-      password
-    } = body;
-    let {
-      email
-    } = body;
+    const { password } = body;
+    let { email } = body;
+    let { username } = body;
     
     if (!email) {
       return res.send({
         success: false,
         message: 'Error: Email cannot be blank.'
+      });
+    }
+    if(!username){
+      return res.send({
+        success: false,
+        message: 'Error: Username cannot be blank.'
       });
     }
     if (!password) {
@@ -25,13 +28,17 @@ module.exports = (app) => {
         message: 'Error: Password cannot be blank.'
       });
     }
+
+    // start of User Check
     email = email.toLowerCase();
     email = email.trim();
-    // Steps:
-    // 1. Verify email doesn't exist
-    // 2. Save
+    username = username.toLowerCase();
+    user = username.trim();
+      // 1. Verify email doesn't exist
+      // 2. Save
     User.find({
-      email: email
+      email: email,
+      username: username
     }, (err, previousUsers) => {
       if (err) {
         return res.send({
@@ -47,6 +54,7 @@ module.exports = (app) => {
       // Save the new user
       const newUser = new User();
       newUser.email = email;
+      newUser.username = username;
       newUser.password = newUser.generateHash(password);
       newUser.save((err, user) => {
         if (err) {
