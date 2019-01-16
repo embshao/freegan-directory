@@ -83,7 +83,7 @@ class Site extends React.Component {
         <Typography component="h6" variant="h6" gutterBottom>
           Add a new find here!
         </Typography>
-        <br />
+
         <form>
           <TextField
             id="outlined-name"
@@ -105,9 +105,16 @@ class Site extends React.Component {
             margin="normal"
             variant="outlined"
           />
-
           <br />
-          <Button onClick={this.handleSubmit}>Submit!</Button>
+          <br />
+          <Button
+            variant="outlined"
+            style={textField}
+            color="secondary"
+            onClick={this.handleSubmit}
+          >
+            Submit!
+          </Button>
         </form>
       </div>
     );
