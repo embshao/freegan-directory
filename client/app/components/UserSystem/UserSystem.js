@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import 'whatwg-fetch';
 import Button from '@material-ui/core/Button';
 import { TextField } from "@material-ui/core";
-
 import { setInStorage, getFromStorage } from '../../utils/storage';
 
 const userBox = {
@@ -253,7 +252,6 @@ class UserSystem extends Component {
               />
 
 
-              {/* <input type="email" placeholder="Email" value={signInEmail} onChange={this.onTextboxChangeSignInEmail}/> */}
             </p>
             <p>
             <TextField
@@ -264,7 +262,6 @@ class UserSystem extends Component {
               margin="normal"
               variant="outlined"
               />
-              {/* <input type="password" placeholder="Password" value={signInPassword} onChange={this.onTextboxChangeSignInPassword}/> */}
             </p>
             <Button onClick={this.onSignIn}>Login</Button>
           </div>
@@ -281,7 +278,6 @@ class UserSystem extends Component {
               margin="normal"
               variant="outlined"
               />
-              {/* <input type="email" placeholder="Email" value={signUpEmail} onChange={this.onTextboxChangeSignUpEmail}/> */}
             </p>
             <p>
             <TextField
@@ -292,7 +288,6 @@ class UserSystem extends Component {
               margin="normal"
               variant="outlined"
               />
-              <input type="text" placeholder="Display Name" value={signUpUsername} onChange={this.onTextboxChangeSignUpUsername} />
             </p>
             
             <Button onClick={this.onSignUp}>Sign Up</Button>

@@ -13,9 +13,6 @@ const App = ({ children }) => (
   <>
     <Header/>
     <main>{children}</main>
-    <Map />
-    <Site />
-    <Footer />
   </>
 );
 

@@ -1,7 +1,7 @@
 import React from "react";
 import L from "leaflet";
 import BeautifyIcon from "./BeautifyIcon";
-
+import Site from "../Site/Site";
 
 class Map extends React.Component {
     constructor(props) {
@@ -67,6 +67,7 @@ class Map extends React.Component {
             
           <div>
             <div id="map"></div>
+            <Site></Site>
           </div>
 
         );
