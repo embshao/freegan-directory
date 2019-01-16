@@ -11,7 +11,7 @@ const selectStyle = {
 
 const App = ({ children }) => (
   <>
-    <Header />
+    <Header/>
     <main>{children}</main>
     <Map />
     <Site />
