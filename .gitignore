@@ -19,3 +19,6 @@ $RECYCLE.BIN/
 .DS_Store
 .Spotlight-V100
 .Trashes
+
+#email alerts
+mailer.js
