@@ -21,46 +21,36 @@ import Divider from "@material-ui/core/Divider";
     _id: "5c3cd95de77ba2d6bb05b7ff"
   }
 ];*/
-//var freshList = [1, 2];
-var freshList = [];
-var numbers = [1, 2, 3, 4, 5];
 
-//just testing
 const testList = [
   { description: "Starbucks", id: "2", created_at: "2014-03-08 01:35:48 UTC" },
   { description: "Juice Town", id: "4", created_at: "2014-03-08 01:35:48 UTC" },
   { description: "Best Bagel", id: "5", created_at: "2014-03-08 01:35:48 UTC" }
 ];
 
-/*const printItem = timeValue => {
-  return (
-    <div>
-      <h1>here is val</h1>
-      <p>{timeValue}</p>
-    </div>
-  );
-};*/
-
 function NumberList(props) {
   const testList = props.testList;
   const listItems = testList.map((number, index) => (
     //console.log("number", number.index)
-    <li key={index}>{number.id}</li>
+    <li key={index}>{number.description}</li>
   ));
   return <ul>{listItems}</ul>;
 }
+
 function SpotList(props) {
   const freshList = props.freshList;
-  const listSpots = freshList.map(
-    (spot, index) => console.log("spot", spot)
-    //<li key={index}>{number.id}</li>
-  );
+  const listSpots = freshList.map((spot, index) => (
+    <li key={index}>{spot.id}</li>
+  ));
   return <ul>{listSpots}</ul>;
 }
 
 class Feed extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      freshList: []
+    };
   }
 
   componentDidMount() {
@@ -84,12 +74,9 @@ class Feed extends Component {
             if (siteTime > "2014-03-06 01:35:48 UTC") {
               //3 days
               //console.log("a good value", value["created_at"]);
-              freshList.push(value);
+              this.state.freshList.push(value);
             }
-
-            //console.log("hey", value.description);
-            //siteList.push(value);
-            //use key and value here
+            //console.log(freshList);
           });
 
           /*for (const spot in res) {
@@ -143,7 +130,7 @@ class Feed extends Component {
           //use key and value here
         })*/}
         <NumberList testList={testList} />
-        <SpotList freshList={freshList} />
+        <SpotList freshList={this.state.freshList} />
       </div>
     );
   }
