@@ -8,6 +8,7 @@ import NotFound from "./components/App/NotFound";
 import UserSystem from "./components/UserSystem/UserSystem";
 import Map from "./components/Map/Map";
 import Feed from "./components/Feed/Feed";
+import Directory from "./components/Directory/Directory";
 
 import "./styles/styles.scss";
 
@@ -15,9 +16,8 @@ render(
   <Router>
     <App>
       <Switch>
-        <Route exact path="/" component={UserSystem}></Route>
-        <Route path="/directory" component={Map}/>
-        <Route path="/testFeed" component={Feed}/>
+        <Route exact path="/" component={UserSystem} />
+        <Route path="/directory" component={Directory} />
       </Switch>
     </App>
   </Router>,

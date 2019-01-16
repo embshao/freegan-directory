@@ -1,9 +1,8 @@
 import React from "react";
 //import styles from "../../styles/styles.scss";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import Typography from '@material-ui/core/Typography';
-
+import Typography from "@material-ui/core/Typography";
 
 const headerStyle = {
   fontSize: "15px",
@@ -20,17 +19,27 @@ const textStyle = {
 const Header = () => (
   <header style={headerStyle}>
     <div style={textStyle}>
+<<<<<<< HEAD
     <img src="/assets/img/logo.png"></img>
+=======
+      <img src="/assets/img/logo.png" />
+
+>>>>>>> 266f5bd2ef10c209d38a06deb4d4163469029e8d
       <h1 style={navStyle}>forage</h1>
       <nav style={navStyle}>
-        <Button><Link style={navStyle}to="/">Sign In/Sign Up</Link></Button>
+        <Button>
+          <Link style={navStyle} to="/">
+            Sign In/Sign Up
+          </Link>
+        </Button>
       </nav>
-    
+
       <nav style={navStyle}>
-      <Button><Link style={navStyle} to="/directory">Directory</Link></Button>
-      </nav>
-      <nav style={navStyle}>
-      <Button> <Link style={navStyle} to="/testFeed">TestFeed</Link></Button>
+        <Button>
+          <Link style={navStyle} to="/directory">
+            Directory
+          </Link>
+        </Button>
       </nav>
     </div>
   </header>
