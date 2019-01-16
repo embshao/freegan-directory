@@ -21,8 +21,6 @@ const Header = () => (
   <header style={headerStyle}>
     <div style={textStyle}>
     <img src="/assets/img/logo.png"></img>
-
-      
       <h1 style={navStyle}>forage</h1>
       <nav style={navStyle}>
         <Button><Link style={navStyle}to="/">Sign In/Sign Up</Link></Button>
@@ -35,7 +33,6 @@ const Header = () => (
       <Button> <Link style={navStyle} to="/testFeed">TestFeed</Link></Button>
       </nav>
     </div>
-    <hr />
   </header>
 );
 

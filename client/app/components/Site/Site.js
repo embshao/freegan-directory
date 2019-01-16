@@ -19,6 +19,11 @@ const textField = {
     marginLeft: '10px',
     marginRight: '10px'
 }
+const image = {
+    height: '40px',
+    display:'inline-block',
+    float: 'left'
+}
 
 
 class Site extends React.Component {
@@ -96,8 +101,9 @@ class Site extends React.Component {
 
       return (
           <div>
-        <Typography component="h5" variant="h5" gutterBottom>
-        Add a new find here!
+        <img style={image}src="/assets/img/trash.png"></img>
+        <Typography component="h5" variant="h4" gutterBottom>
+        Add a new spot here!
         </Typography>
         <br/>
         <form >

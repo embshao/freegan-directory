@@ -26,6 +26,7 @@ const tab = {
 };
 
 
+
 class UserSystem extends Component {
   constructor(props) {
     super(props);
@@ -238,6 +239,7 @@ class UserSystem extends Component {
     if (!token) {
       return (
         <div style={userBox}>
+          
         <Typography component="h2" variant="h6" gutterBottom style={tab}>
             Login
           </Typography>
@@ -284,6 +286,16 @@ class UserSystem extends Component {
               variant="outlined"
               />
             </p>
+            <p>
+             <TextField
+             id="outlined-name"
+             label="Display Name"
+             value={signUpUsername}
+             onChange={this.onTextboxChangeSignUpUsername}
+             margin="normal"
+             variant="outlined"
+             />
+           </p>
             <p>
             <TextField
               id="outlined-name"
