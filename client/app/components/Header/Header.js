@@ -3,13 +3,13 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 const headerStyle = {
-  backgroundColor: "ivory",
-  fontSize: "20px",
-  color: "pink"
+  fontSize: "15px",
+  color: "#486641"
 };
 const navStyle = {
   display: "inline-block",
-  width: "200px"
+  width: "200px",
+  color: "#486641"
 };
 const textStyle = {
   padding: "30px"
@@ -17,7 +17,9 @@ const textStyle = {
 const Header = () => (
   <header style={headerStyle}>
     <div style={textStyle}>
-      <h1 style={navStyle}>Freegan Directory</h1>
+    <img src="/assets/img/logo.png"></img>
+
+      <h1 style={navStyle}>forage</h1>
       <nav style={navStyle}>
         <Link to="/">Sign In/Sign Up</Link>
       </nav>
