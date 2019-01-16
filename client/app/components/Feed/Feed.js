@@ -4,14 +4,15 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
-import { SocialSentimentSatisfied } from "material-ui/svg-icons";
+import Typography from "@material-ui/core/Typography";
 
 const listStyle = {
-  paddingTop: "30px",
-  width: "50%"
+  width: "100%"
 };
 const feedStyle = {
-  marginLeft: "80px"
+  fontSize: "10px",
+  display: "inline-block",
+  padding: "30px"
 };
 const testList = [
   {
@@ -251,7 +252,9 @@ class Feed extends Component {
   render() {
     return (
       <div style={feedStyle}>
-        <h1> Live Feed</h1>
+        <Typography component="h6" variant="h6" gutterBottom>
+          Live Feed
+        </Typography>
         <Dropdown />
         <List style={listStyle}>
           {testList.map(test => (

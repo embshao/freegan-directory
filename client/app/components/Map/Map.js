@@ -7,11 +7,6 @@ const mapstyle = {
   display: "inline-block"
 };
 
-const sitestyle = {
-  display: "inline-block",
-  float: "right",
-  marginRight: "10%"
-};
 class Map extends React.Component {
   constructor(props) {
     super(props);
@@ -70,9 +65,6 @@ class Map extends React.Component {
     return (
       <div>
         <div id="map" style={mapstyle} />
-        <div style={sitestyle}>
-          <Site />
-        </div>
       </div>
     );
   }
