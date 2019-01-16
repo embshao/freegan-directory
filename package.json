@@ -19,11 +19,12 @@
   "dependencies": {
     "@babel/core": "^7.0.0-beta.42",
     "@babel/preset-env": "^7.0.0-beta.42",
-    "@babel/preset-react": "^7.0.0-beta.42",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.2.0",
     "@material-ui/core": "^3.8.3",
     "autoprefixer": "^8.2.0",
     "axios": "^0.18.0",
-    "babel-loader": "^8.0.0-beta.2",
+    "babel-preset-react": "^6.24.1",
     "bcrypt": "^3.0.3",
     "connect-history-api-fallback": "^1.5.0",
     "copy-webpack-plugin": "^4.5.1",
@@ -35,6 +36,7 @@
     "html-webpack-plugin": "^3.1.0",
     "leaflet": "^1.4.0",
     "leaflet-control-geocoder": "^1.6.0",
+    "leaflet-geosearch": "^2.7.0",
     "leaflet-routing-machine": "^3.2.12",
     "leaflet.locatecontrol": "^0.66.0",
     "material-ui": "^0.20.2",
@@ -59,7 +61,23 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
+    "@babel/plugin-transform-async-to-generator": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
     "@types/leaflet": "^1.2.14",
-    "@types/leaflet-routing-machine": "^3.2.1"
-  }
+    "@types/leaflet-routing-machine": "^3.2.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "transform-runtime": "0.0.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

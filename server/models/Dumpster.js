@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const DumpsterSchema = new mongoose.Schema({
-    lat : {
+const DumpsterSchema = new mongoose.Schema(
+    { lat : {
         type: Number,
         default: 0
     },
@@ -33,6 +33,8 @@ const DumpsterSchema = new mongoose.Schema({
         type: String,
         default: ''
     }
-});
+    }, 
+    { collection : 'freegan' }
+);
 
 module.exports = mongoose.model('Dumpster', DumpsterSchema);

@@ -4,7 +4,7 @@ import 'whatwg-fetch';
 import { setInStorage, getFromStorage } from '../../utils/storage';
 
 const userBox = {
-  width: "500px",
+  width: "400px",
   backgroundColor: "ivory",
   marginLeft: "auto",
   marginRight: "auto",
@@ -16,22 +16,12 @@ const userInnerBox = {
 };
 
 const tab = {
-  listStyle: "none",
-  marginLeft: "auto",
-  marginRight: "auto",
-};
-
-const tabLi = {
-  display: "block",
   textDecoration: "none",
   padding: "5px",
   background: "pink",
   color: "white",
   fontSize: "15px",
-  float: "left",
-  width: "40%",
   textAlign: "center",
-  marginLeft: "3px"
 };
 
 
@@ -48,11 +38,13 @@ class UserSystem extends Component {
       signInPassword: '',
       signUpEmail: '',
       signUpPassword: '',
+      signUpUsername: '',
     };
     //user system
     this.onTextboxChangeSignInEmail = this.onTextboxChangeSignInEmail.bind(this);
     this.onTextboxChangeSignInPassword = this.onTextboxChangeSignInPassword.bind(this);
     this.onTextboxChangeSignUpEmail = this.onTextboxChangeSignUpEmail.bind(this);
+    this.onTextboxChangeSignUpUsername = this.onTextboxChangeSignUpUsername.bind(this);
     this.onTextboxChangeSignUpPassword = this.onTextboxChangeSignUpPassword.bind(this);
     this.onSignUp = this.onSignUp.bind(this);
     this.onSignIn = this.onSignIn.bind(this);
@@ -77,6 +69,12 @@ class UserSystem extends Component {
     });
   }
 
+  onTextboxChangeSignUpUsername(event) {
+    this.setState({
+      signUpUsername: event.target.value,
+    });
+  }
+
   onTextboxChangeSignUpPassword(event) {
     this.setState({
       signUpPassword: event.target.value,
@@ -87,6 +85,7 @@ class UserSystem extends Component {
     // Grabs values stored in state
     const {
       signUpEmail,
+      signUpUsername,
       signUpPassword,
     } = this.state;
     this.setState({
@@ -100,6 +99,7 @@ class UserSystem extends Component {
       },
       body: JSON.stringify({
         email: signUpEmail,
+        username: signUpUsername,
         password: signUpPassword,
       }),
     }).then(res => res.json())
@@ -110,6 +110,7 @@ class UserSystem extends Component {
             signUpError: json.message,
             isLoading: false,
             signUpEmail: '',
+            signUpUsername: '',
             signUpPassword: '',
           });
         } else {
@@ -224,6 +225,7 @@ class UserSystem extends Component {
       signInEmail,
       signInPassword,
       signUpEmail,
+      signUpUsername,
       signUpPassword,
       signUpError,
     } = this.state;
@@ -235,12 +237,7 @@ class UserSystem extends Component {
     if (!token) {
       return (
         <div style={userBox}>
-          <ul style={tab}>
-            <li style={tabLi}>Login</li>
-            <li style={tabLi}>Sign Up</li>
-          </ul>
-          <br/>
-          
+          <p style={tab}>Login</p>
           <div style={userInnerBox}>
             {(signInError) ? (<p>{signInError}</p>) : (null)}
             <p>
@@ -252,10 +249,14 @@ class UserSystem extends Component {
             <button onClick={this.onSignIn}>Login</button>
           </div>
 
+          <p style={tab}>Sign Up</p>
           <div style={userInnerBox}>
             {(signUpError) ? (<p>{signUpError}</p>) : (null)}
             <p>
               <input type="email" placeholder="Email" value={signUpEmail} onChange={this.onTextboxChangeSignUpEmail}/>
+            </p>
+            <p>
+              <input type="text" placeholder="Display Name" value={signUpUsername} onChange={this.onTextboxChangeSignUpUsername} />
             </p>
             <p>
               <input type="password" placeholder="Password" value={signUpPassword} onChange={this.onTextboxChangeSignUpPassword}/>

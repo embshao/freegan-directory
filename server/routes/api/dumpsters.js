@@ -12,7 +12,8 @@ module.exports = (app) => {
     });
   });
 
-  app.post('/dumpsters', function(req, res) {
+  app.post('/freegan', function(req, res) {
+   
     var dump = new Dumpster({
       lat : req.body.lat,
       lng : req.body.lng,
